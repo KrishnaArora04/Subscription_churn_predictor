@@ -1,0 +1,6 @@
+Customer ID,Last Login,Engagement Score,Payment History,Churned
+001,2023-12-25,8.5,On-time,No
+002,2023-10-15,3.2,Late,Yes
+003,2023-11-10,6.7,On-time,No
+004,2023-09-05,1.4,Late,Yes
+005,2023-12-01,7.8,On-time,No

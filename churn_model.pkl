@@ -1,0 +1,28 @@
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+import joblib
+import os
+
+# Create a directory for models if it doesn't exist
+os.makedirs("models", exist_ok=True)
+
+# Sample data
+data = {
+    'Engagement Score': [8.5, 3.2, 6.7, 1.4, 7.8],
+    'Churned': [0, 1, 0, 1, 0]
+}
+df = pd.DataFrame(data)
+
+# Splitting the data
+X = df[['Engagement Score']]
+y = df['Churned']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train a model
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+# Save the model
+joblib.dump(model, "models/churn_model.pkl")
+print("Model saved successfully!")
